@@ -2065,13 +2065,13 @@ p > code {
         margin: 0 auto;
       }
     body {
-      color: #555;
+      color: #212529;
     }
     .next-md-body {
-      color: #555;
+      color: #212529;
     }
     .next-md-body h1, .next-md-body h2 {
-      border-bottom-color: #555;
+      border-bottom-color: #212529;
     }
     .archive-timeline-box::after, .tag-timeline-wrapper::after {
       background: #eeeeee7f;
@@ -2173,18 +2173,18 @@ p > code {
       background: #f8f9fa7f;
     }
     .main-title, .brand {
-      color: #212529 !important;
+      color: #f76707 !important;
     }
     .mist .site-title i {
-      background: #2125297f;
+      background: #f767077f;
     }body {
-      cursor: default;
+      cursor: url('/media/curs//normal.cur'), default;
     }a {
-      cursor: pointer;
+      cursor: url('/media/curs//link.cur'), pointer !important;
     }input, textarea, code {
-      cursor: text;
+      cursor: url('/media/curs//text.cur'), text !important;
     }code > span.copy-code {
-      cursor: pointer;
+      cursor: url('/media/curs//text.cur'), text !important;
     }.post img {
       cursor: zoom-in;
     }.post img {
