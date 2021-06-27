@@ -2,13 +2,39 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://whitecateattea.github.io</id>
     <title>My private zone</title>
-    <updated>2021-06-27T04:49:48.468Z</updated>
+    <updated>2021-06-27T15:32:07.101Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://whitecateattea.github.io"/>
     <link rel="self" href="https://whitecateattea.github.io/atom.xml"/>
     <logo>https://whitecateattea.github.io/images/avatar.png</logo>
     <icon>https://whitecateattea.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, My private zone</rights>
+    <entry>
+        <title type="html"><![CDATA[ Ventoy装系统]]></title>
+        <id>https://whitecateattea.github.io/post/ventoy-zhuang-xi-tong/</id>
+        <link href="https://whitecateattea.github.io/post/ventoy-zhuang-xi-tong/">
+        </link>
+        <updated>2021-06-27T15:16:21.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="简介">简介</h1>
+<p>都2020年了，不会还要在淘宝上买装机U盘吧，不会吧，不会吧。制作装系统U盘已经有很多方法，比如大家都知道的<a href="https://www.dabaicai.com/">大白菜</a>，但是要是说目前最快速，纯净的装系统方案，首推Ventoy(个人看法)，<a href="https://www.ventoy.net/">官方网站</a>，基本可以安装市面主流的所有操作系统，如下图官方的测试列表<br>
+<img src="https://cdn.jsdelivr.net/gh/cateattea/cloudimg/img/Snipaste_2021-04-10_14-43-46.png" alt="" loading="lazy"></p>
+<h1 id="三步装系统">三步装系统</h1>
+<h2 id="用ventoy制作系统盘">用Ventoy制作系统盘</h2>
+<p>去官网下载Ventoy安装包，这个绝对有手就行，下载完成后进行解压，解压出来后运行Ventoy2Disk.exe这个程序<br>
+<img src="https://cdn.jsdelivr.net/gh/cateattea/cloudimg/img/Snipaste_2021-04-10_14-29-26.png" alt="" loading="lazy"></p>
+<p>打开之后就更简单了，界面从来没用过的人都能看懂，设备里面选择提前准备好的空U盘，点击安装，over。就是这么简单，为所欲为。<br>
+<img src="https://cdn.jsdelivr.net/gh/cateattea/cloudimg/img/Snipaste_2021-04-10_14-30-22.png" alt="" loading="lazy"></p>
+<p>安装完成后U盘将会变成下面这个样子，小容量的盘符不要去动它，大容量的那个就可以当作一个正常的U盘来使用，之后需要做的就是把想要安装的系统的镜像放在大容量盘符里面即可，也就是图里红框里面的第一个<br>
+<img src="https://cdn.jsdelivr.net/gh/cateattea/cloudimg/img/Snipaste_2021-04-10_14-35-05.png" alt="" loading="lazy"></p>
+<h2 id="下载系统镜像">下载系统镜像</h2>
+<p>下载系统镜像的地方有很多，自己看着办，但是推荐一个网站：<a href="https://msdn.itellyou.cn/">MSDN，I tell you</a>，懂得都懂，全是正版，不懂得也不多说什么了。看下图，举Win10系统为例，建议Multiple版本，里面有集合了专业版，复制红框内容浏览器打开，就会启动迅雷下载，前提是安装好迅雷。完成后把镜像文件(.iso)，复制到U盘里面，over。<br>
+<img src="https://cdn.jsdelivr.net/gh/cateattea/cloudimg/img/Snipaste_2021-04-10_14-39-39.png" alt="" loading="lazy"></p>
+<h2 id="装系统">装系统</h2>
+<p>把U盘插入电脑，开机进入BIOS，选择U盘启动，这时候就会进入装系统界面，如下图(来自Ventoy官网)，里面会显示你U盘里的镜像，然后选择你要安装的系统，按Enter键即可开始，over。<br>
+<img src="https://cdn.jsdelivr.net/gh/cateattea/cloudimg/img/Snipaste_2021-04-10_14-53-45.png" alt="" loading="lazy"></p>
+<p>所以，就是真么简单无脑，就是这么纯净，直接起飞</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[关于]]></title>
         <id>https://whitecateattea.github.io/post/about/</id>
