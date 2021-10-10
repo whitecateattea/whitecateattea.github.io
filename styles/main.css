@@ -2090,12 +2090,12 @@ p > code {
     .node-title::before {
       background-color: #212529;
     }a {
-      color: #087f5b;
+      color: #212529;
     }
     
     .next-md-body a, .friends-box a  {
-      color: #087f5b;
-      border-bottom: 1px solid #087f5b;
+      color: #212529;
+      border-bottom: 1px solid #212529;
     }a:hover {
       color: #c92a2a;
     }
