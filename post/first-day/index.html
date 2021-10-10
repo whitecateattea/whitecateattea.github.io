@@ -8,7 +8,7 @@
 <meta name="keywords" content="May静态个人博客">
 <meta name="description" content="">
 <meta name="theme-color" content="#f8f9fa">
-<title> Ventoy装系统 | My private zone</title>
+<title>First Day! | My private zone</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1633857506137">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -41,8 +41,8 @@
 
 
 
-  <meta name="description" content=" Ventoy装系统" />
-  <meta name="keywords" content="系统,Ventoy,windows" />
+  <meta name="description" content="First Day!" />
+  <meta name="keywords" content="English,IELTS" />
 </head>
 
 <body>
@@ -181,207 +181,6 @@
 
 <div class="sidebar">
   
-    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
-      
-      <div class="sidebar-body gemini" id="sidebar_body">
-        
-          
-            <div style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
-<li><a href="#%E4%B8%89%E6%AD%A5%E8%A3%85%E7%B3%BB%E7%BB%9F">三步装系统</a>
-<ul>
-<li><a href="#%E7%94%A8ventoy%E5%88%B6%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9B%98">用Ventoy制作系统盘</a></li>
-<li><a href="#%E4%B8%8B%E8%BD%BD%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F">下载系统镜像</a></li>
-<li><a href="#%E8%A3%85%E7%B3%BB%E7%BB%9F">装系统</a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
-          
-        
-      </div>
-    </div>
-  
 </div>
 <script>
   const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
@@ -464,8 +263,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://whitecateattea.github.io/post/ventoy-zhuang-xi-tong/">
-       Ventoy装系统
+    <a class="post-title-link" href="https://whitecateattea.github.io/post/first-day/">
+      First Day!
     </a>
   </h1>
   <div class="post-meta">
@@ -473,7 +272,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2021-06-27 23:16:21">2021-06-27</span>
+      <span class="publish-time" data-t="2021-10-10 17:15:10">2021-10-10</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -482,20 +281,14 @@
       <span class="pc-show language" data-lan="category-in">分类于</span>
       
       
-      <a href="https://whitecateattea.github.io/tag/FlFwFH9gq/">
-        <span>系统</span>
+      <a href="https://whitecateattea.github.io/tag/Bewib23FP/">
+        <span>English</span>
       </a>、
       
       
       
-      <a href="https://whitecateattea.github.io/tag/pjcMfbgYqX/">
-        <span>Ventoy</span>
-      </a>、
-      
-      
-      
-      <a href="https://whitecateattea.github.io/tag/SZsV--Zw5x/">
-        <span>windows</span>
+      <a href="https://whitecateattea.github.io/tag/UEiX8LDx_l/">
+        <span>IELTS</span>
       </a>
       
       
@@ -504,35 +297,18 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2<span class="language" data-lan="minute">分钟</span></span>
+      <span>1<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>514<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>14<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <h1 id="简介">简介</h1>
-<p>都2020年了，不会还要在淘宝上买装机U盘吧，不会吧，不会吧。制作装系统U盘已经有很多方法，比如大家都知道的<a href="https://www.dabaicai.com/">大白菜</a>，但是要是说目前最快速，纯净的装系统方案，首推Ventoy(个人看法)，<a href="https://www.ventoy.net/">官方网站</a>，基本可以安装市面主流的所有操作系统，如下图官方的测试列表<br>
-<img src="https://cdn.jsdelivr.net/gh/cateattea/cloudimg/img/Snipaste_2021-04-10_14-43-46.png" alt="" loading="lazy"></p>
-<h1 id="三步装系统">三步装系统</h1>
-<h2 id="用ventoy制作系统盘">用Ventoy制作系统盘</h2>
-<p>去官网下载Ventoy安装包，这个绝对有手就行，下载完成后进行解压，解压出来后运行Ventoy2Disk.exe这个程序<br>
-<img src="https://cdn.jsdelivr.net/gh/cateattea/cloudimg/img/Snipaste_2021-04-10_14-29-26.png" alt="" loading="lazy"></p>
-<p>打开之后就更简单了，界面从来没用过的人都能看懂，设备里面选择提前准备好的空U盘，点击安装，over。就是这么简单，为所欲为。<br>
-<img src="https://cdn.jsdelivr.net/gh/cateattea/cloudimg/img/Snipaste_2021-04-10_14-30-22.png" alt="" loading="lazy"></p>
-<p>安装完成后U盘将会变成下面这个样子，小容量的盘符不要去动它，大容量的那个就可以当作一个正常的U盘来使用，之后需要做的就是把想要安装的系统的镜像放在大容量盘符里面即可，也就是图里红框里面的第一个<br>
-<img src="https://cdn.jsdelivr.net/gh/cateattea/cloudimg/img/Snipaste_2021-04-10_14-35-05.png" alt="" loading="lazy"></p>
-<h2 id="下载系统镜像">下载系统镜像</h2>
-<p>下载系统镜像的地方有很多，自己看着办，但是推荐一个网站：<a href="https://msdn.itellyou.cn/">MSDN，I tell you</a>，懂得都懂，全是正版，不懂得也不多说什么了。看下图，举Win10系统为例，建议Multiple版本，里面有集合了专业版，复制红框内容浏览器打开，就会启动迅雷下载，前提是安装好迅雷。完成后把镜像文件(.iso)，复制到U盘里面，over。<br>
-<img src="https://cdn.jsdelivr.net/gh/cateattea/cloudimg/img/Snipaste_2021-04-10_14-39-39.png" alt="" loading="lazy"></p>
-<h2 id="装系统">装系统</h2>
-<p>把U盘插入电脑，开机进入BIOS，选择U盘启动，这时候就会进入装系统界面，如下图(来自Ventoy官网)，里面会显示你U盘里的镜像，然后选择你要安装的系统，按Enter键即可开始，over。<br>
-<img src="https://cdn.jsdelivr.net/gh/cateattea/cloudimg/img/Snipaste_2021-04-10_14-53-45.png" alt="" loading="lazy"></p>
-<p>所以，就是真么简单无脑，就是这么纯净，直接起飞</p>
+              <p>Today is the first day to write article in this private zone by English.</p>
 
             </div>
             
@@ -545,7 +321,7 @@
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://whitecateattea.github.io/post/ventoy-zhuang-xi-tong/" title=" Ventoy装系统">https://whitecateattea.github.io/post/ventoy-zhuang-xi-tong/</a>
+      <a href="https://whitecateattea.github.io/post/first-day/" title="First Day!">https://whitecateattea.github.io/post/first-day/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -554,25 +330,19 @@
   </ul>
   <div class="tags">
     
-      <a href="https://whitecateattea.github.io/tag/FlFwFH9gq/"># 系统</a>
+      <a href="https://whitecateattea.github.io/tag/Bewib23FP/"># English</a>
     
-      <a href="https://whitecateattea.github.io/tag/pjcMfbgYqX/"># Ventoy</a>
-    
-      <a href="https://whitecateattea.github.io/tag/SZsV--Zw5x/"># windows</a>
+      <a href="https://whitecateattea.github.io/tag/UEiX8LDx_l/"># IELTS</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="First Day!" href="https://whitecateattea.github.io/post/first-day/">First Day!</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="First Day!" href="https://whitecateattea.github.io/post/first-day/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="关于" href="https://whitecateattea.github.io/post/about/">关于</a>
-        <a class="nav-mobile-next" title="关于" href="https://whitecateattea.github.io/post/about/">下一篇</a>
+        <a class="nav-pc-next" title=" Ventoy装系统" href="https://whitecateattea.github.io/post/ventoy-zhuang-xi-tong/"> Ventoy装系统</a>
+        <a class="nav-mobile-next" title=" Ventoy装系统" href="https://whitecateattea.github.io/post/ventoy-zhuang-xi-tong/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
