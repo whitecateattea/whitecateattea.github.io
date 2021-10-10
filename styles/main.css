@@ -2090,12 +2090,12 @@ p > code {
     .node-title::before {
       background-color: #212529;
     }a {
-      color: #212529;
+      color: #087f5b;
     }
     
     .next-md-body a, .friends-box a  {
-      color: #212529;
-      border-bottom: 1px solid #212529;
+      color: #087f5b;
+      border-bottom: 1px solid #087f5b;
     }a:hover {
       color: #c92a2a;
     }
@@ -2140,8 +2140,8 @@ p > code {
       color: #343a40;
       border-bottom-color: #343a40;
     }.markdownIt-TOC a:hover {
-      color: #5c940d;
-      border-bottom-color: #5c940d;
+      color: #212529;
+      border-bottom-color: #212529;
     }.active-current > a {
       color: #fc6423 !important;
       border-bottom-color: #fc6423 !important;
